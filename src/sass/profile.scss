@@ -1,0 +1,109 @@
+@import "./variables";
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    // background-color: $light-lavender;
+}
+
+.prompt-header {
+    font-size: 9vmin;
+    // margin-left: 6vmin;
+    // margin-top: 3.2vmin;
+    // margin: 0 auto;
+    color: $midnight-blue;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: right;
+    .submit-button {
+        background-color: $midnight-blue;
+        padding: 10px 20px 10px 20px;
+        border-radius: 12px;
+        color: $light-lavender;
+        font-size: 24px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.profile-form {
+    // max-width: 340px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.item-div {
+    position: relative;
+    // background-color: aqua;
+    margin-bottom: 15px;
+}
+  
+span.normal-input {
+    position: relative;
+
+    label {
+        position: absolute;
+        pointer-events: none;
+        // moves label vertically and horizontally
+        transform: translate(0px, 28px) scale(1);
+        transform-origin: top left;
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        color: #6f81a5;
+        font-size: 24px;
+        line-height: 1;
+        // make equal to padding in input
+        left: 21px;
+    }
+
+    .month {
+        position: absolute;
+        pointer-events: none;
+        // moves label vertically and horizontally
+        transform: translate(-6px, 9px) scale(0.8);
+        transform-origin: top left;
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        // color: green;
+        font-size: 18px;
+    }
+
+    &:focus-within label {
+        transform: translate(-6px, 9px) scale(0.8);
+        color: $midnight-blue;
+        font-size: 18px;
+    }
+
+    .filled {
+        transform: translate(-6px, 9px) scale(0.8);
+        font-size: 18px;
+    }
+
+    input {
+        height: 64px;
+        border-radius: 24px;
+        border: none;
+        // positions input cursor: padding put on top to move down and adjust spacing bt input and placeholder/label
+        padding: 11px 21px 0px;
+        font-size: 24px;
+        line-height: 1;
+        outline: none;
+        box-shadow: none;
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        background-color: white;
+        outline: solid;
+        outline-color: $midnight-blue;
+        outline-width: .3vmin;
+
+        &:focus {
+            box-shadow: 0 0 8px 8px $light-lavender;
+        } 
+    }
+}
